@@ -1,6 +1,7 @@
 *{
   font-family: "roboto";
 }
+
 .nav {
   display: flex;
   justify-content: space-around;
@@ -34,24 +35,24 @@
     }
   }
 }
-.what {
-    padding: 10px;
-}
-.importance {
-    padding: 10px;
-}
+
 .more {
     background-color: #D3D3D3; /* Light Gray */
     padding: 10px;
 }
 
-.content{
+.what{
+  margin:0px 200px 0px 200px;
   display:flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  
+ align-items: center;
+  flex-direction:column;
+}
+
+.importance{
+ margin:0px 200px 0px 200px;
+  display:flex;
+   align-items: center;
+    flex-direction:column;
 }
 a{
   position: relative;
@@ -76,4 +77,8 @@ a:hover{
 }
 a:hover:after{
   width: 70%;
+}
+h2,h1{
+  width: 100%;
+  text-align: center;
 }
