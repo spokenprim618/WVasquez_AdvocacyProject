@@ -1,0 +1,186 @@
+.nav {
+  display: flex;
+  position: fixed;
+  justify-content: space-around;
+  background: white;
+  padding:10px;
+  height: 8vh;
+  width:100%;
+  place-items: center;
+  transition: 1s;
+  top:0;
+  overflow:hidden;  
+}
+a{
+  position: relative;
+  font-size: 20px;  
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0.7em 1em;
+
+}
+a:after{
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 3px;
+  width: 0;
+  left: 17%;
+  bottom: 5px;
+  transition: 0.3s;
+}
+
+a:hover{
+  color: black;
+
+}
+a:hover:after{
+  width: 70%;
+}
+h2,h1{
+  width: 100%;
+  text-align: center;
+}
+.progess-bar{
+position: fixed;
+  width: 100%;
+  height: 1vh;
+  transition: 1s;
+  z-index: 1;
+}
+.filled{
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, red, orange);
+}
+#ital{
+  font-style: italic;
+}
+#contactForm{
+  position: fixed;
+  top:40%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width: 600px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.30);
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s;
+  z-index: 1;
+}
+
+#blur.active{
+  filter: blur(20px);
+
+}
+#contactForm.active{
+  visibility: visible;
+  opacity: 1;
+  transition: .5s;
+}
+#darkModeColor.active{
+  h1,p,h2{
+    color:white;
+     transition: 1s;
+  }
+  a{
+    color:#ada8a8;
+  }
+  .nav{
+    background-color: black;
+     transition: 1s;
+  }
+  a:hover{
+    color:white;
+  }
+  a:after{
+    background-color: white;  
+  }
+  .what,.importance,#contactForm,html{
+    background-color:black;
+     transition: 1s;
+  }
+  .landing{
+    background-color: purple;
+     transition: 1s;
+  }
+  .filled{
+    background-image: linear-gradient(to right, blue, skyblue);
+  }
+  button{
+    border-color: white;
+    color:white;
+    background-color: black;
+  }
+  .inputBox input, .inputBox textarea{ 
+    border: 1px solid white;
+    background: lightgray;
+    color: white;
+  }
+  .inputBox span{
+    color:white;
+  }
+  .inputBox input:focus ~ span,
+  .inputBox input:valid ~ span,
+  .inputBox textarea:focus ~ span,
+  .inputBox textarea:valid ~ span{
+    background-color: black;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+  }
+  background-color: black;
+   transition: 1s;
+}
+#contactFormForm{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap:30px;
+}
+.inputBox{
+ position: relative;
+  display: flex;
+  width:250px;
+}
+.inputBox input, .inputBox textarea{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+  border-radius: 5px;
+  outline: none;
+  color: black;
+  font-size: 1em;
+  transition: .5s;
+}
+.inputBox span{
+  position: absolute;
+  left:0;
+  padding:10px;
+  pointer-events: none;
+  font-size: 1em;
+  color:black;
+  text-transform: uppercase;
+  transition: .5s;
+}
+.inputBox input:focus ~ span,
+.inputBox input:valid ~ span,
+.inputBox textarea:focus ~ span,
+.inputBox textarea:valid ~ span{
+  color:lightblue;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background-color: white;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  letter-spacing: .2em;
+}
+.inputBox input:focus,
+.inputBox input:valid,
+.inputBox textarea:focus,
+.inputBox textarea:valid{
+  border: 1px solid lightblue;
+}

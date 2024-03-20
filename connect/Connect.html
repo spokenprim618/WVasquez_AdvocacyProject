@@ -1,15 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./resets/reset.css" rel="stylesheet" type="text/css" />
+  <link href="../resets/reset.css" rel="stylesheet" type="text/css" />
   <link href="Connect.css" rel="stylesheet" type="text/css" />
-  <link href="./resets/webview.css" rel="stylesheet" type="text/css" />
+  <link href="../resets/reset-webview.css" rel="stylesheet" type="text/css" />
+  <script src="../script.js" defer></script>
+
   <title>Document</title>
 </head>
-<body>
-  
+
+<body id="darkModeColor">
+  <div class="progess-bar">
+    <div class="filled"></div>
+  </div>
+
+  <div class="nav">
+     <a href="../index.html">Home</a>
+    <a href="#" class="blurButton">Contact</a>
+    <a href="#" data-butt="false" id="resources">Resources</a>
+    <button id="darkMode">Dark mode</button>
+  </div>
+  <div id="contactForm">
+    <form id="contactFormForm">
+
+      <h1>Contact Us</h1>
+      <div class="inputBox">
+        <input type="text" required="required">
+        <span>Name</span>
+      </div>
+
+      <div class="inputBox">
+        <input type="email" required="required">
+        <span>Email</span>
+      </div>
+
+      <div class="inputBox">
+        <input type="text" required="required">
+        <span>Subject</span>
+      </div>
+
+      <div class="inputBox">
+        <textarea type="text" required="required"></textarea>
+        <span>Message</span>
+      </div>
+
+      <div id="buttons">
+        <button class="blurButton">Cancel</button>
+        <button type="submit">Submit</button>
+      </div>
+
+    </form>
+  </div>
+
+  <div id="blur"></div>
+
 </body>
+
 </html>
