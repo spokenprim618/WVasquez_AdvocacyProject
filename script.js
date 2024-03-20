@@ -14,3 +14,21 @@ function update(){
   requestAnimationFrame(update);
 }
 update();
+
+let blurButton = document.querySelectorAll(".blurButton");
+blurButton.forEach(blurButton=>{
+  blurButton.addEventListener("click",function(){
+    let blur = document.querySelector("#blur");
+    blur.classList.toggle("active");
+
+    let contactForm = document.querySelector("#contactForm");
+    contactForm.classList.toggle("active")
+
+  })
+})
+
+let darkMode = document.querySelector("#darkMode");
+darkMode.addEventListener('click',function(){
+  let darkModeColor = document.querySelector("#darkModeColor");
+  darkModeColor.classList.toggle("active");
+})

@@ -28,3 +28,13 @@ a{
   text-decoration: none;
   line-height:1;
 }
+button{
+  border: 2px solid black;
+  border-radius: 1rem;
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: .5rem;
+  cursor: pointer;
+}
