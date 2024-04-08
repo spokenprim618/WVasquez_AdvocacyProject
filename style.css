@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 *{
   font-family: "roboto";
 }
@@ -178,8 +181,23 @@ position: fixed;
     border-left: 1px solid white;
     border-right: 1px solid white;
   }
+  .about {
+    background-color: #2658ed;
+    transition:1s;
+  }
+  .about button:hover {
+    background-color: #555;
+  }
+
   background-color: black;
    transition: 1s;
+}
+#contactFormForm{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap:30px;
 }
 #contactFormForm{
   display: flex;
@@ -232,4 +250,82 @@ position: fixed;
 .inputBox textarea:focus,
 .inputBox textarea:valid{
   border: 1px solid lightblue;
+}
+.about {
+  background-color: #F9A826;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin: 35px 20px 10px 20px;
+  box-shadow: 6px 6px 10px -1px rgba(0,0,0,1),
+    -6px -6px 10px -1px rgba(255,255,255,1),
+    6px 6px 10px -1px rgba(0,0,0,1),
+    -6px -6px 10px -1px rgba(255,255,255,1);
+  max-height: 130px;
+  overflow: hidden;
+  transition: max-height 0.5s;
+  
+}
+.about.activeMission{
+  max-height: 788px;
+}
+.aboutSign{
+  margin-bottom:5px;
+}
+.about h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.about p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.aboutMission {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.aboutMission:hover {
+  background-color: #555;
+}
+aboutSign {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.aboutSign:hover {
+  background-color: #555;
+}
+.about.activeSign{
+  max-height: 1000px;
+}
+.error {
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
+  background:pink;
+}
+.petition-container{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  padding-bottom: 50px;
+  justify-content: center;
+}
+.petition-para{
+  width:100%;
+  padding-right:10px;
+}
+.signatures{
+  width: 45%;
+  padding-right:10px;
 }
