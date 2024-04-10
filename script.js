@@ -44,7 +44,7 @@ aboutMission.addEventListener("click", function() {
 
 let signNowButton = document.querySelector("#sign-now-button")
 let count = 3;
-const addSignature = (e) =>{
+const addSignature = () =>{
   
 
      let name = document.getElementById("Name").value;
@@ -53,26 +53,37 @@ const addSignature = (e) =>{
         const newSignature = document.createElement("p");
         newSignature.textContent = `🖊️ ${name} from ${hometown} supports this.`;
         signaturesSection.appendChild(newSignature);
-       e.preventDefault();
 
 }
-signNowButton.addEventListener ("click",addSignature)
+// signNowButton.addEventListener ("click",addSignature)
 
 
-// const validateForm = () => {
+const validateForm = (e) => {
 
-//   let containsErrors = false;
+  let containsErrors = false;
 
-//   var petitionInputs = document.getElementById("sign-petition").elements;
-//   // TODO: Loop through all inputs
+  var petitionInputs = document.getElementById("sign-petition").elements;
+  // TODO: Loop through all inputs
+  for (let i = 0; i < petitionInputs.length-1; i++) {
+    if (petitionInputs[i].value.length < 2) {
+      petitionInputs[i].classList.add('error');
+      containsErrors = true;
+    }
+    else {
+      petitionInputs[i].classList.remove('error');
+    }
+  }
+  console.log(petitionInputs)
+  if(containsErrors == false){
+    addSignature();
+     for (let i = 0; i < petitionInputs.length; i++) {
+       petitionInputs[i].value = "";
+       containsErrors = false;
+     }
+  }
 
+  
+e.preventDefault()
+}
 
-//   // TODO: Validate the value of each input
-
-
-
-//   // TODO: Call addSignature() and clear fields if no errors
-
-// }
-
-// signNowButton.addEventListener('click', validateForm());
+signNowButton.addEventListener('click', validateForm);
