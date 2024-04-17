@@ -55,7 +55,6 @@ const addSignature = () =>{
         signaturesSection.appendChild(newSignature);
 
 }
-// signNowButton.addEventListener ("click",addSignature)
 
 
 const validateForm = (e) => {
@@ -86,4 +85,41 @@ const validateForm = (e) => {
 e.preventDefault()
 }
 
+let animation = {
+  revealDistance: 50,
+  initialOpacity: 0,
+  transitionDelay: 0,
+  transitionDuration: '2s',
+  transitionProperty: 'all',
+  transitionTimingFunction: 'ease',
+}
+let addReveal = () =>{
+  let what = document.querySelectorAll(".what > *");
+  let importance = document.querySelectorAll(".importance > *")
+  let about = document.querySelectorAll(".about > *");
+  what.forEach((element) => element.classList.add("revealable"))
+  importance.forEach((element) => element.classList.add("revealable"))
+  about.forEach((element) => element.classList.add("revealable"))
+}
+window.addEventListener("load",addReveal)
+let revealableContainers = document.getElementsByClassName("revealable");
+
+let reveal = () =>{
+  console.log(revealableContainers)
+  for(let i=0;i<revealableContainers.length;i++){
+    let windowHeight=window.innerHeight;
+    console.log(revealableContainers);
+    let topOfRevealableContainer = revealableContainers[i].getBoundingClientRect().top;
+    console.log(topOfRevealableContainer)
+    console.log(windowHeight-animation.revealDistance)
+    if (topOfRevealableContainer < windowHeight - animation.revealDistance) {
+      /* add the active class to the revealableContainer's classlist */
+      revealableContainers[i].classList.add("activeScroll");
+    } else {
+      /* remove the active class to the revealableContainer's classlist */
+      revealableContainers[i].classList.remove("activeScroll");
+    }
+  }
+}
+window.addEventListener("scroll", reveal);
 signNowButton.addEventListener('click', validateForm);
